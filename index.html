@@ -1,0 +1,26 @@
+<html>
+
+<head></head>
+
+<body>
+    <h1>Числа Фибоначчи</h1>
+    <hr/>
+    <button id="button">Получить число</button>
+    <hr/>
+    <input id="input" type="text">
+
+
+    <script>
+        const btn = document.getElementById('button')
+        const inp = document.getElementById('input')
+        btn.addEventListener('click', () => {
+            fetch('/num').then(response => {
+                return response.text().then(text => {
+                    inp.value = text
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
